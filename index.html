@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -33,11 +34,21 @@
       line-height: 1.7;
     }
 
+    /* ── 页面主容器：桌面端整体居中，Hero和内容对齐 ── */
+    .page-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 4px 40px rgba(26,46,74,0.08);
+      overflow: hidden;
+    }
+    body { background: #eef2f7; }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2d4f7c 100%);
       color: #fff;
-      padding: 64px 24px 80px;
+      padding: 56px 40px 68px;
       position: relative;
       overflow: hidden;
     }
@@ -60,7 +71,7 @@
     }
 
     .hero-inner {
-      max-width: 800px;
+      max-width: 100%;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -133,9 +144,9 @@
 
     /* ── SECTIONS ── */
     .content {
-      max-width: 800px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 24px 60px;
+      padding: 0 40px 50px;
     }
 
     .section { margin-top: 44px; }
@@ -655,24 +666,200 @@
       letter-spacing: 0.3px;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 560px) {
-      .hero-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .avatar-wrap { width: 100px; height: 100px; }
-      .hero-name { font-size: 26px; }
+    /* ── 服务团队 ── */
+    .team-lead {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 22px;
+      margin-bottom: 18px;
+    }
+    .team-lead-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .team-lead-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .team-lead-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .team-lead-desc strong { color: var(--navy); font-weight: 600; }
+
+    .team-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .team-stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .team-stat-val {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+    .team-stat-val span { color: var(--gold); font-size: 14px; margin-left: 2px; }
+    .team-stat-key {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      position: relative;
+    }
+    .member-card:hover {
+      box-shadow: 0 8px 28px rgba(26,46,74,0.15);
+      transform: translateY(-3px);
+    }
+    .member-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+    }
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .member-photo::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 40%;
+      background: linear-gradient(180deg, transparent 0%, rgba(26,46,74,0.75) 100%);
+    }
+    .member-name-overlay {
+      position: absolute;
+      left: 14px; bottom: 12px;
+      z-index: 2;
+      color: #fff;
+    }
+    .member-name-cn {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .member-role-tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.85);
+      color: #fff;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .member-body {
+      padding: 14px 16px 16px;
+    }
+    .member-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .member-services {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .member-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .member-tag {
+      background: var(--accent-bg);
+      color: var(--navy);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE 全站响应式适配 ── */
+    /* 平板 */
+    @media (max-width: 900px) {
+      .content { padding: 0 20px 50px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-inner { gap: 24px; }
+    }
+
+    /* 手机 */
+    @media (max-width: 640px) {
+      .hero { padding: 40px 20px 50px; }
+      .hero-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .avatar-wrap { width: 96px; height: 96px; }
+      .hero-name { font-size: 24px; }
+      .hero-title { font-size: 12px; }
+      .content { padding: 0 16px 40px; }
+      .section { margin-top: 32px; }
+      .section-title { font-size: 15px; }
+      .intro-card, .cap-block-body, .cap-block-head { padding-left: 18px; padding-right: 18px; }
       .clusters-grid, .comp-grid { grid-template-columns: 1fr; }
-      .philosophy-card { flex-direction: column; }
-      .intro-card { padding: 20px; }
-      .case-card { grid-template-columns: 1fr; }
-      .case-metrics { grid-column: 1; grid-row: 2; justify-content: flex-start; }
+      .philosophy-card { flex-direction: column; padding: 22px; }
+      .case-card { width: 300px; grid-template-columns: 1fr; }
+      .case-metrics { grid-column: 1; grid-row: 2; justify-content: flex-start; gap: 14px; }
       .case-badge { grid-row: 3; }
       .people-grid { grid-template-columns: 1fr; }
-      .incubate-steps { flex-direction: column; }
+      .incubate-steps { flex-direction: column; gap: 10px; }
       .incubate-arrow { display: none; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .team-stats { grid-template-columns: repeat(2, 1fr); }
+      .member-body { padding: 12px 12px 14px; }
+      .contact-item { min-width: 100%; }
+    }
+
+    /* 小屏手机 */
+    @media (max-width: 380px) {
+      .hero-name { font-size: 22px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .member-photo { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
 <body>
+<div class="page-wrap">
 
   <!-- HERO -->
   <header class="hero">
@@ -723,61 +910,182 @@
       </div>
     </section>
 
-    <!-- 深耕产业带 -->
+    <!-- 服务团队 -->
     <section class="section">
       <div class="section-header">
         <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 5.9a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
         </div>
-        <div class="section-title">深耕产业带</div>
+        <div class="section-title">专属服务团队</div>
         <div class="section-line"></div>
       </div>
 
-      <div class="clusters-grid">
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">番禺 · 服装纺织</div>
-            <div class="cluster-desc">全国重要服装生产基地，覆盖女装、休闲装、运动服及定制出口；供应链完整，工厂资质齐全。</div>
-          </div>
-        </div>
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">花都 · 皮具箱包</div>
-            <div class="cluster-desc">国内最大皮具集散地之一，集设计、制造、销售为一体，外销欧美中东市场优势突出。</div>
-          </div>
-        </div>
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">白云 · 汽车零配件</div>
-            <div class="cluster-desc">广州汽配核心区，产品覆盖车身、内饰、改装件，工厂集群优势带动整体出口竞争力。</div>
-          </div>
-        </div>
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">荔湾 · 鞋业皮革</div>
-            <div class="cluster-desc">历史悠久的鞋业产地，劳保鞋、女鞋、童鞋各具特色，品牌出海潜力持续释放。</div>
-          </div>
-        </div>
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">增城 · 牛仔服装</div>
-            <div class="cluster-desc">中国牛仔名镇新塘所在地，年产值超百亿，一站式供应链支撑全球牛仔品牌代工与出口。</div>
-          </div>
-        </div>
-        <div class="cluster-card">
-          <div class="cluster-dot"></div>
-          <div>
-            <div class="cluster-name">其他细分产业带</div>
-            <div class="cluster-desc">覆盖广州各区制造类工贸企业，熟悉广交会资质工厂、专精特新企业的出海路径设计。</div>
-          </div>
+      <!-- 团队总纲 -->
+      <div class="team-lead">
+        <div class="team-lead-title">一个客户经理背后，是一整支专业作战团队</div>
+        <div class="team-lead-desc">
+          与我合作的每一位商家，享受的都不是"一个人的服务"——<strong>而是南粤大区广州中区一支覆盖管理、业务、运营、平台搭建、售后保障、新媒体的 6 人专业团队</strong>。从签约、店铺搭建到日常运营、内容拍摄、售后跟进，每一个环节都有对应的专家为你保驾护航，真正做到"托付一人，得到一队"。
         </div>
       </div>
+
+      <!-- 团队数据条 -->
+      <div class="team-stats">
+        <div class="team-stat">
+          <div class="team-stat-val">6<span>人</span></div>
+          <div class="team-stat-key">专业服务团队</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">6<span>大岗位</span></div>
+          <div class="team-stat-key">全链路覆盖</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">1<span>年</span></div>
+          <div class="team-stat-key">新客户保障期</div>
+        </div>
+        <div class="team-stat">
+          <div class="team-stat-val">7<span>×12h</span></div>
+          <div class="team-stat-key">在线响应</div>
+        </div>
+      </div>
+
+      <!-- 团队成员卡片 -->
+      <div class="team-grid">
+
+        <!-- 1 团队管理负责人 · 李振邦 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/H2b8e75ad32c6443a80954ddff2ae552cQ.jpg" alt="李振邦"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">李振邦</div>
+              <span class="member-role-tag">团队管理负责人</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">团队总舵手 · 战略与资源</div>
+            <div class="member-services">
+              统筹团队整体运作，把控服务标准与商家满意度；负责跨部门资源协调、疑难商家的高优先级介入，是您与阿里内部对接的"直通车"。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">团队管理</span>
+              <span class="member-tag">资源协调</span>
+              <span class="member-tag">升级处理</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 团队业务负责人 · 洪智 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/Hb248777171964a85a1404095b1883b53Z.jpg" alt="洪智"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">洪 智</div>
+              <span class="member-role-tag">团队业务负责人</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">业务方向盘 · 策略与打法</div>
+            <div class="member-services">
+              主导商家出海策略规划与业务节奏把控；深度参与产业带客户的商业模式诊断，提供从选品到市场破局的实战级顾问建议。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">业务规划</span>
+              <span class="member-tag">策略咨询</span>
+              <span class="member-tag">市场破局</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 团队运营专家 · 莫志坤 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/Hc45df9e3e7424054ae438240d41954e4O.jpg" alt="莫志坤"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">莫志坤</div>
+              <span class="member-role-tag">团队运营专家</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">流量操盘手 · P4P 与转化</div>
+            <div class="member-services">
+              精通 P4P / 直通车 / 全站推广的账户诊断与优化；关键词布局、出价策略、地域溢价、时段调控——把每一分推广预算都花在刀刃上。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">P4P 优化</span>
+              <span class="member-tag">流量诊断</span>
+              <span class="member-tag">转化提升</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 新客户首年保障专员 · 何凤铷 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/Hdae1797c11284fecb3c3424a9e1d356eO.jpg" alt="何凤铷"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">何凤铷</div>
+              <span class="member-role-tag">新客首年保障专员</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">首年护航员 · 从 0 到 1</div>
+            <div class="member-services">
+              专为新签商家提供 12 个月贴身保障：从实地认证、信保开通到店铺装修、发品指导，全流程手把手陪跑，杜绝"签完就没人管"。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">新客陪跑</span>
+              <span class="member-tag">认证协助</span>
+              <span class="member-tag">首年保障</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 平台搭建师 · 陆春李 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/H4566c2a91eec439d9ccf4aabf675979b5.jpg" alt="陆春李"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">陆春李</div>
+              <span class="member-role-tag">平台搭建师</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">店铺美学官 · 视觉与结构</div>
+            <div class="member-services">
+              专业负责店铺装修、详情页设计、主图优化；从买家视角出发打磨每一处视觉细节，让商家店铺具备"点击即信任"的国际竞争力。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">店铺装修</span>
+              <span class="member-tag">详情页设计</span>
+              <span class="member-tag">主图优化</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 新媒体负责人 · 黄艳 -->
+        <div class="member-card">
+          <div class="member-photo">
+            <img src="https://sc02.alicdn.com/kf/H81468dee837a4a61b7211be7a0af9154l.jpg" alt="黄艳"/>
+            <div class="member-name-overlay">
+              <div class="member-name-cn">黄 艳</div>
+              <span class="member-role-tag">新媒体负责人</span>
+            </div>
+          </div>
+          <div class="member-body">
+            <div class="member-title">内容操盘手 · 短视频与获客</div>
+            <div class="member-services">
+              统筹 TikTok / YouTube / 独立站等多平台内容矩阵；主导短视频脚本、拍摄、剪辑与投放，为商家在私域获客赛道打开第二增长曲线。
+            </div>
+            <div class="member-tags">
+              <span class="member-tag">短视频矩阵</span>
+              <span class="member-tag">TikTok 运营</span>
+              <span class="member-tag">私域获客</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
+
 
     <!-- 核心能力 -->
     <section class="section">
@@ -1381,6 +1689,7 @@
   <footer>
     范浪 David &nbsp;·&nbsp; 阿里巴巴国际站 · ICBU 南粤大区广州中区 &nbsp;·&nbsp; 资深客户经理 &nbsp;·&nbsp; 专注工厂出海
   </footer>
+</div><!-- /page-wrap -->
 
   <script>
     // 无缝滚动：将卡片列表复制一份追加在末尾，实现真正无缝循环
