@@ -1,567 +1,801 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>范浪 David · 资深客户经理</title>
+  <title>范浪 David · 阿里国际站资深客户经理 · 广州产业带出海专家</title>
+  <meta name="description" content="范浪 David，阿里集团 ICBU 南粤大区广州中区资深客户经理，专注广州产业带工厂出海，提供从 0 到 1 的跨境全链路服务。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #1a2e4a;
+      --navy:       #1a2e4a;
+      --navy-deep:  #111f33;
       --navy-light: #243b5e;
-      --gold: #c9a84c;
+      --gold:       #c9a84c;
       --gold-light: #e6c97a;
-      --text-primary: #1a2032;
-      --text-secondary: #4a5568;
+      --gold-pale:  #fdf6e3;
+      --text:       #1a2032;
+      --text-sec:   #4a5568;
       --text-muted: #718096;
-      --bg: #f7f8fa;
-      --white: #ffffff;
-      --border: #e2e8f0;
-      --accent-bg: #eef3f9;
+      --bg:         #f7f8fa;
+      --white:      #ffffff;
+      --border:     #e2e8f0;
+      --accent:     #eef3f9;
+      --max-w:      1100px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* ── 页面主容器：桌面端整体居中，Hero和内容对齐 ── */
-    .page-wrap {
-      max-width: 900px;
-      margin: 0 auto;
       background: var(--white);
-      box-shadow: 0 4px 40px rgba(26,46,74,0.08);
-      overflow: hidden;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.75;
     }
-    body { background: #eef2f7; }
 
-    /* ── HERO ── */
+    .inner { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+
+    /* ══════════════════════════════
+       HERO — 全屏品牌开场
+    ══════════════════════════════ */
     .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2d4f7c 100%);
+      background:
+        linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 45%, #1e3a5f 100%);
       color: #fff;
-      padding: 56px 40px 68px;
+      padding: 72px 32px 80px;
       position: relative;
       overflow: hidden;
     }
 
+    /* 背景装饰圆环 */
     .hero::before {
       content: '';
       position: absolute;
-      top: -80px; right: -80px;
-      width: 340px; height: 340px;
+      top: -120px; right: -120px;
+      width: 500px; height: 500px;
       border-radius: 50%;
-      border: 60px solid rgba(201,168,76,0.08);
+      border: 80px solid rgba(201,168,76,0.07);
+      pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -60px; left: -60px;
-      width: 240px; height: 240px;
+      bottom: -80px; left: -80px;
+      width: 320px; height: 320px;
       border-radius: 50%;
-      border: 40px solid rgba(255,255,255,0.04);
+      border: 50px solid rgba(255,255,255,0.03);
+      pointer-events: none;
+    }
+    /* 金色竖线装饰 */
+    .hero-line {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold-light) 70%, transparent);
     }
 
     .hero-inner {
-      max-width: 100%;
+      max-width: var(--max-w);
       margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 52px;
       position: relative;
       z-index: 1;
     }
 
-    .avatar-wrap {
+    .hero-avatar-wrap {
       flex-shrink: 0;
-      width: 130px; height: 130px;
+      position: relative;
+    }
+    .hero-avatar {
+      width: 148px; height: 148px;
       border-radius: 50%;
       border: 3px solid var(--gold);
       overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.4), 0 0 0 8px rgba(201,168,76,0.12);
     }
-    .avatar-wrap img {
+    .hero-avatar img {
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: center top;
+    }
+    /* 头像右下角认证徽章 */
+    .hero-badge-dot {
+      position: absolute;
+      right: 6px; bottom: 6px;
+      width: 28px; height: 28px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--navy-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
     }
 
-    .hero-text {}
-    .hero-tag {
-      display: inline-block;
-      background: rgba(201,168,76,0.18);
-      border: 1px solid rgba(201,168,76,0.45);
-      color: var(--gold-light);
-      font-size: 11px;
-      letter-spacing: 2px;
-      padding: 3px 12px;
-      border-radius: 2px;
-      margin-bottom: 12px;
-      font-weight: 500;
+    .hero-content { flex: 1; }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
     }
+    .hero-eyebrow-line {
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+    .hero-eyebrow-text {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold-light);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
     .hero-name {
       font-family: 'Noto Serif SC', serif;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      line-height: 1.2;
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      line-height: 1.1;
       margin-bottom: 6px;
     }
-    .hero-title {
-      font-size: 14px;
-      color: rgba(255,255,255,0.72);
+    .hero-name-en {
+      font-size: 18px;
       font-weight: 300;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
+      opacity: 0.6;
+      letter-spacing: 4px;
+      margin-left: 6px;
     }
+    .hero-title {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero-tagline {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 560px;
+      border-left: 3px solid var(--gold);
+      padding-left: 16px;
+    }
+    .hero-tagline strong { color: var(--gold-light); }
+
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    .badge {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.88);
-      font-size: 12px;
+    .hero-badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.82);
+      font-size: 11px;
       padding: 4px 12px;
-      border-radius: 20px;
+      border-radius: 2px;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge--gold {
+      background: rgba(201,168,76,0.15);
+      border-color: rgba(201,168,76,0.4);
+      color: var(--gold-light);
     }
 
-    /* ── GOLD DIVIDER ── */
+    /* ══════════════════════════════
+       GOLD BAR
+    ══════════════════════════════ */
     .gold-bar {
-      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
       height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
     }
 
-    /* ── SECTIONS ── */
-    .content {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0 40px 50px;
-    }
-
-    .section { margin-top: 44px; }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .section-icon {
-      width: 36px; height: 36px;
+    /* ══════════════════════════════
+       STATS BAR — 数字证明
+    ══════════════════════════════ */
+    .stats-bar {
       background: var(--navy);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      padding: 0 32px;
     }
-    .section-icon svg { width: 18px; height: 18px; fill: var(--gold); }
-    .section-title {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 1px;
+    .stats-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
     }
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border), transparent);
-    }
-
-    /* ── INTRO CARD ── */
-    .intro-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 32px;
+    .stat-item {
+      padding: 24px 16px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
       position: relative;
-      overflow: hidden;
     }
-    .intro-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--gold), var(--navy));
-      border-radius: 4px 0 0 4px;
+    .stat-item:last-child { border-right: none; }
+    .stat-val {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 5px;
     }
-    .intro-lead {
-      font-size: 15px;
-      color: var(--text-primary);
-      line-height: 1.9;
-      margin-bottom: 16px;
-    }
-    .intro-lead strong { color: var(--navy); font-weight: 600; }
-    .intro-tagline {
-      background: var(--accent-bg);
-      border-left: 3px solid var(--gold);
-      padding: 12px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: 14px;
-      color: var(--navy);
-      font-weight: 500;
+    .stat-val sup { font-size: 16px; }
+    .stat-val sub { font-size: 14px; font-weight: 400; color: var(--gold-light); margin-left: 2px; }
+    .stat-key {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
       letter-spacing: 0.5px;
     }
 
-    /* ── CLUSTERS GRID ── */
-    .clusters-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .cluster-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .cluster-card:hover {
-      box-shadow: 0 4px 20px rgba(26,46,74,0.1);
-      transform: translateY(-2px);
-    }
-    .cluster-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-    .cluster-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 3px;
-    }
-    .cluster-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    /* ══════════════════════════════
+       SECTION HEADER 通用
+    ══════════════════════════════ */
+    .section { padding: 64px 32px; }
+    .section--alt { background: var(--bg); }
+    .section--dark { background: var(--navy); }
 
-    /* ── COMPETENCY ── */
-    .comp-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .section-inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
       gap: 12px;
-    }
-    .comp-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-    }
-    .comp-num {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 11px;
-      color: var(--gold);
-      letter-spacing: 2px;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .comp-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
       margin-bottom: 8px;
     }
-    .comp-body {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.65;
+    .section-label-line {
+      width: 28px; height: 2px;
+      background: var(--gold);
     }
+    .section-label-text {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .section--dark .section-label-text { color: var(--gold-light); }
 
-    /* ── PHILOSOPHY ── */
-    .philosophy-card {
+    .section-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .section--dark .section-title { color: #fff; }
+    .section-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-sec);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+    .section--dark .section-desc { color: rgba(255,255,255,0.6); }
+
+    /* ══════════════════════════════
+       BRAND STORY — 品牌宣言
+    ══════════════════════════════ */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 40px;
+    }
+    .story-text p {
+      font-size: 14px;
+      color: var(--text-sec);
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+    .story-text p strong { color: var(--navy); font-weight: 600; }
+    .story-quote {
       background: var(--navy);
       border-radius: 12px;
       padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px; left: 20px;
+      font-size: 120px;
+      font-family: Georgia, serif;
+      color: rgba(201,168,76,0.12);
+      line-height: 1;
+    }
+    .story-quote-text {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 17px;
       color: #fff;
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
+      line-height: 1.85;
+      position: relative;
+      z-index: 1;
     }
-    .phil-quote {
-      flex-shrink: 0;
-      width: 40px; height: 40px;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.4);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .phil-quote svg { width: 20px; height: 20px; fill: var(--gold); }
-    .phil-text {
-      font-size: 15px;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.9);
-    }
-    .phil-text strong { color: var(--gold-light); }
-
-    /* ── CONTACT ── */
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .contact-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 20px;
+    .story-quote-text strong { color: var(--gold-light); }
+    .story-quote-author {
+      margin-top: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
-      flex: 1;
-      min-width: 180px;
     }
-    .contact-icon {
-      width: 32px; height: 32px;
-      background: var(--accent-bg);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-icon svg { width: 16px; height: 16px; fill: var(--navy); }
-    .contact-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-    .contact-value {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--navy);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 20px 24px 32px;
-      font-size: 11px;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
+    .story-quote-line { width: 20px; height: 1px; background: var(--gold); }
+    .story-quote-name {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
       letter-spacing: 1px;
     }
 
-    /* ── CAPABILITY BLOCKS ── */
-    .cap-lead {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: 0 10px 10px 0;
-      padding: 16px 22px;
-      font-size: 14px;
-      line-height: 1.9;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-    .cap-lead strong { color: var(--navy); font-weight: 600; }
-
-    .cap-block {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 14px;
-    }
-    .cap-block--accent {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-    .cap-block--full { width: 100%; }
-
-    .cap-block-head {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 24px 14px;
-      border-bottom: 1px solid var(--border);
-    }
-    .cap-block--accent .cap-block-head {
-      border-bottom-color: rgba(255,255,255,0.12);
-    }
-
-    .cap-index {
-      width: 40px; height: 40px;
-      background: var(--navy);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Noto Serif SC', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-    .cap-index--light {
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.35);
-      color: var(--gold-light);
-    }
-    .cap-block-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-    .cap-block-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .cap-block-body {
-      padding: 18px 24px 20px;
-    }
-    .cap-block-body p {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.85;
-      margin-bottom: 14px;
-    }
-    .cap-block--accent .cap-block-body p {
-      color: rgba(255,255,255,0.75);
-    }
-
-    /* 产业带标签 */
-    .cap-tags {
+    /* 产业带标签云 */
+    .cluster-cloud {
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
+    .cluster-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--navy);
+      font-weight: 500;
+      position: relative;
+      padding-left: 20px;
+    }
+    .cluster-tag::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 50%;
+      transform: translateY(-50%);
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ══════════════════════════════
+       TEAM — 专属服务团队
+    ══════════════════════════════ */
+    .team-intro {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 36px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-intro-icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .team-intro-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+    .team-intro-text { font-size: 14px; color: var(--navy); line-height: 1.75; }
+    .team-intro-text strong { font-weight: 600; }
+
+    .team-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .team-stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-stat::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .team-stat-val {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .team-stat-val span { color: var(--gold); font-size: 14px; margin-left: 1px; }
+    .team-stat-key { font-size: 10px; color: var(--text-muted); letter-spacing: 0.3px; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .member-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .member-card:hover {
+      box-shadow: 0 12px 40px rgba(26,46,74,0.14);
+      transform: translateY(-4px);
+    }
+    .member-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      background: #dde4ec;
+    }
+    .member-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.4s ease;
+    }
+    .member-card:hover .member-photo img { transform: scale(1.04); }
+    .member-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(17,31,51,0.88) 100%);
+    }
+    .member-overlay-content {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 14px 16px;
+      z-index: 2;
+    }
+    .member-name {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .member-role-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .member-body { padding: 16px 18px 18px; }
+    .member-headline {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .member-desc {
+      font-size: 11px;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .member-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .member-chip {
+      background: var(--accent);
+      color: var(--navy);
+      border: 1px solid var(--border);
+      font-size: 10px;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    /* ══════════════════════════════
+       CAPABILITY — 核心能力
+    ══════════════════════════════ */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    /* 宽块 */
+    .cap-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .cap-block--wide { grid-column: span 2; }
+    .cap-block--dark {
+      background: var(--navy-deep);
+      border-color: var(--navy-deep);
+    }
+
+    .cap-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cap-block--dark .cap-head { border-bottom-color: rgba(255,255,255,0.08); }
+    .cap-num {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cap-block--dark .cap-num {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold-light);
+    }
+    .cap-head-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .cap-block--dark .cap-head-title { color: #fff; }
+    .cap-head-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .cap-block--dark .cap-head-sub { color: rgba(255,255,255,0.45); }
+
+    .cap-body { padding: 18px 24px 20px; }
+    .cap-body p {
+      font-size: 13px;
+      color: var(--text-sec);
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+    .cap-block--dark .cap-body p { color: rgba(255,255,255,0.65); }
+
+    /* 产业带标签 */
+    .cap-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
     .cap-tag {
-      background: var(--accent-bg);
+      background: var(--accent);
       border: 1px solid var(--border);
       color: var(--navy);
-      font-size: 12px;
-      padding: 4px 12px;
+      font-size: 11px;
+      padding: 3px 11px;
       border-radius: 20px;
       font-weight: 500;
     }
 
-    /* 0→1 孵化步骤 */
-    .incubate-steps {
-      display: flex;
-      align-items: flex-start;
+    /* 0→1 步骤 */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
-      flex-wrap: wrap;
     }
-    .incubate-step {
-      flex: 1;
-      min-width: 130px;
+    .step {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      align-items: flex-start;
+      padding: 0 16px 0 0;
+      position: relative;
     }
-    .incubate-arrow {
-      padding: 18px 8px 0;
-      color: rgba(201,168,76,0.6);
-      font-size: 18px;
-      font-weight: 300;
-      flex-shrink: 0;
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: 2px; top: 8px;
+      color: rgba(201,168,76,0.5);
+      font-size: 16px;
     }
-    .step-dot {
-      width: 36px; height: 36px;
+    .step-n {
+      width: 30px; height: 30px;
       border-radius: 50%;
-      background: rgba(201,168,76,0.18);
-      border: 1.5px solid rgba(201,168,76,0.5);
+      background: rgba(201,168,76,0.15);
+      border: 1.5px solid rgba(201,168,76,0.45);
       color: var(--gold-light);
       font-size: 11px;
       font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
-    .step-title {
-      font-size: 13px;
+    .step-t {
+      font-size: 12px;
       font-weight: 600;
       color: #fff;
       margin-bottom: 4px;
     }
-    .step-desc {
+    .step-d {
       font-size: 11px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.55);
       line-height: 1.6;
     }
 
-    /* 招育留人 */
-    .people-grid {
+    /* 招育留 */
+    .people-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
-    .people-card {
-      background: var(--accent-bg);
+    .people-item {
+      background: var(--accent);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: box-shadow 0.2s, transform 0.2s;
+      padding: 14px 16px;
     }
-    .people-card:hover {
-      box-shadow: 0 4px 16px rgba(26,46,74,0.09);
-      transform: translateY(-1px);
-    }
-    .people-icon {
-      width: 34px; height: 34px;
-      background: var(--navy);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 2px;
-    }
-    .people-icon svg { width: 17px; height: 17px; fill: var(--gold); }
     .people-label {
       font-size: 15px;
       font-weight: 700;
       color: var(--navy);
       letter-spacing: 2px;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .people-body {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.65;
+    .people-icon {
+      width: 26px; height: 26px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .people-icon svg { width: 13px; height: 13px; fill: var(--gold); }
+    .people-desc { font-size: 11px; color: var(--text-sec); line-height: 1.65; }
+
+    /* ══════════════════════════════
+       PHILOSOPHY — 服务理念
+    ══════════════════════════════ */
+    .phil-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 36px;
+    }
+    .phil-left { }
+    .phil-statement {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 20px;
+      color: #fff;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .phil-statement strong { color: var(--gold-light); }
+    .phil-principles {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .phil-p {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .phil-p-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .phil-p-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+    }
+    .phil-right { }
+    .phil-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .phil-card-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .phil-card-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .phil-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .phil-card-icon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .phil-card-icon svg { width: 17px; height: 17px; fill: var(--gold); }
+    .phil-card-item-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .phil-card-item-desc {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
     }
 
-    /* ── CASE SCROLL ── */
+    /* ══════════════════════════════
+       CASES — 同行标杆案例滚动
+    ══════════════════════════════ */
+    .cases-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+    .cases-tip {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .cases-tip span { color: var(--gold); }
+
     .scroll-outer {
       overflow: hidden;
       position: relative;
-      margin: 0 -24px;
-      padding: 4px 0 8px;
+      margin: 0 -32px;
     }
     .scroll-outer::before,
     .scroll-outer::after {
       content: '';
       position: absolute;
       top: 0; bottom: 0;
-      width: 48px;
+      width: 60px;
       z-index: 2;
       pointer-events: none;
     }
-    .scroll-outer::before { left: 0;  background: linear-gradient(90deg, var(--bg), transparent); }
-    .scroll-outer::after  { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
-
+    .scroll-outer::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--bg), transparent);
+    }
+    .scroll-outer::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--bg), transparent);
+    }
     .scroll-track {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       width: max-content;
-      animation: scrollX 60s linear infinite;
-      padding: 0 24px;
+      animation: scrollX 65s linear infinite;
+      padding: 8px 32px;
     }
     .scroll-track:hover { animation-play-state: paused; }
-
     @keyframes scrollX {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -571,17 +805,16 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 18px 22px;
-      width: 340px;
+      padding: 18px 20px;
+      width: 320px;
       flex-shrink: 0;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-rows: auto auto;
-      gap: 12px 16px;
-      align-items: start;
       position: relative;
       overflow: hidden;
       transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .case-card:hover {
+      box-shadow: 0 6px 24px rgba(26,46,74,0.1);
+      transform: translateY(-2px);
     }
     .case-card::before {
       content: '';
@@ -589,30 +822,8 @@
       left: 0; top: 0; bottom: 0;
       width: 3px;
       background: var(--gold);
-      border-radius: 3px 0 0 3px;
     }
-    .case-card:hover {
-      box-shadow: 0 6px 24px rgba(26,46,74,0.12);
-      transform: translateY(-2px);
-    }
-
-    .case-left { grid-column: 1; grid-row: 1; min-width: 0; }
-    .case-metrics {
-      grid-column: 2; grid-row: 1;
-      display: flex; gap: 10px;
-      align-items: flex-start;
-      flex-shrink: 0;
-    }
-    .case-badge {
-      grid-column: 1 / -1; grid-row: 2;
-      font-size: 11px;
-      color: var(--gold);
-      font-weight: 500;
-      border-top: 1px dashed var(--border);
-      padding-top: 9px;
-    }
-
-    .case-industry-tag {
+    .case-ind-tag {
       display: inline-block;
       font-size: 10px;
       font-weight: 500;
@@ -620,8 +831,6 @@
       border-radius: 20px;
       border: 1px solid;
       margin-bottom: 7px;
-      letter-spacing: 0.3px;
-      white-space: nowrap;
     }
     .case-company {
       font-size: 13px;
@@ -632,1077 +841,933 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .case-highlight {
+    .case-quote {
       font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.55;
+      color: var(--text-sec);
       font-style: italic;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      line-height: 1.5;
+      margin-bottom: 12px;
     }
-
-    .metric-item { text-align: center; min-width: 58px; }
-    .metric-val {
-      font-size: 14px;
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .case-metric { text-align: center; }
+    .case-metric-val {
+      font-size: 13px;
       font-weight: 700;
       color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 3px;
       white-space: nowrap;
     }
-    .metric-key {
+    .case-metric-key {
       font-size: 9px;
       color: var(--text-muted);
       line-height: 1.4;
+      margin-top: 1px;
     }
-
-    .scroll-pause-tip {
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-muted);
+    .case-badge-row {
       margin-top: 10px;
-      letter-spacing: 0.3px;
-    }
-
-    /* ── 服务团队 ── */
-    .team-lead {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: 0 10px 10px 0;
-      padding: 16px 22px;
-      margin-bottom: 18px;
-    }
-    .team-lead-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .team-lead-title::before {
-      content: '';
-      display: inline-block;
-      width: 4px; height: 14px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-    .team-lead-desc {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.75;
-    }
-    .team-lead-desc strong { color: var(--navy); font-weight: 600; }
-
-    .team-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-    .team-stat {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 12px;
-      text-align: center;
-    }
-    .team-stat-val {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.1;
-      margin-bottom: 3px;
-    }
-    .team-stat-val span { color: var(--gold); font-size: 14px; margin-left: 2px; }
-    .team-stat-key {
-      font-size: 10px;
-      color: var(--text-muted);
-      letter-spacing: 0.3px;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .member-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: box-shadow 0.25s, transform 0.25s;
-      position: relative;
-    }
-    .member-card:hover {
-      box-shadow: 0 8px 28px rgba(26,46,74,0.15);
-      transform: translateY(-3px);
-    }
-    .member-photo {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      position: relative;
-      background: #f0f0f0;
-    }
-    .member-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .member-photo::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      height: 40%;
-      background: linear-gradient(180deg, transparent 0%, rgba(26,46,74,0.75) 100%);
-    }
-    .member-name-overlay {
-      position: absolute;
-      left: 14px; bottom: 12px;
-      z-index: 2;
-      color: #fff;
-    }
-    .member-name-cn {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      margin-bottom: 2px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-    .member-role-tag {
-      display: inline-block;
-      background: rgba(201,168,76,0.85);
-      color: #fff;
-      font-size: 10px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-    .member-body {
-      padding: 14px 16px 16px;
-    }
-    .member-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 6px;
-      padding-bottom: 6px;
-      border-bottom: 1px dashed var(--border);
-    }
-    .member-services {
-      font-size: 11px;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 8px;
-    }
-    .member-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 4px;
     }
-    .member-tag {
-      background: var(--accent-bg);
-      color: var(--navy);
+    .case-badge {
       font-size: 10px;
-      padding: 2px 8px;
+      color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 1px 8px;
       border-radius: 20px;
+    }
+
+    /* ══════════════════════════════
+       CONTACT — 联系我
+    ══════════════════════════════ */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-top: 36px;
+    }
+    .contact-left { }
+    .contact-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .contact-ico {
+      width: 38px; height: 38px;
+      background: var(--navy);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-ico svg { width: 18px; height: 18px; fill: var(--gold); }
+    .contact-label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-value { font-size: 13px; font-weight: 500; color: var(--navy); }
+
+    .contact-addr {
+      background: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 12px;
+      color: var(--text-sec);
+      line-height: 1.7;
+      display: flex;
+      gap: 10px;
+    }
+    .contact-addr-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .contact-right { }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+    }
+    .contact-qr {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 10px;
+      overflow: hidden;
       border: 1px solid var(--border);
     }
+    .contact-qr img { width: 100%; display: block; }
+    .contact-scan-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .contact-name-block { }
+    .contact-name-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+    .contact-name-en { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+    .contact-dept { font-size: 11px; color: var(--text-sec); line-height: 1.6; }
 
-    /* ── RESPONSIVE 全站响应式适配 ── */
-    /* 平板 */
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer {
+      background: var(--navy-deep);
+      padding: 28px 32px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 1px;
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.5px;
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
     @media (max-width: 900px) {
-      .content { padding: 0 20px 50px; }
+      .stats-inner { grid-template-columns: repeat(3, 1fr); }
+      .stat-item:nth-child(4),
+      .stat-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.07); }
+      .story-grid, .phil-layout, .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+      .cap-grid { grid-template-columns: 1fr; }
+      .cap-block--wide { grid-column: span 1; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .step:not(:last-child)::after { display: none; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-inner { gap: 24px; }
+      .section { padding: 48px 24px; }
     }
 
-    /* 手机 */
-    @media (max-width: 640px) {
-      .hero { padding: 40px 20px 50px; }
-      .hero-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .avatar-wrap { width: 96px; height: 96px; }
-      .hero-name { font-size: 24px; }
-      .hero-title { font-size: 12px; }
-      .content { padding: 0 16px 40px; }
-      .section { margin-top: 32px; }
-      .section-title { font-size: 15px; }
-      .intro-card, .cap-block-body, .cap-block-head { padding-left: 18px; padding-right: 18px; }
-      .clusters-grid, .comp-grid { grid-template-columns: 1fr; }
-      .philosophy-card { flex-direction: column; padding: 22px; }
-      .case-card { width: 300px; grid-template-columns: 1fr; }
-      .case-metrics { grid-column: 1; grid-row: 2; justify-content: flex-start; gap: 14px; }
-      .case-badge { grid-row: 3; }
-      .people-grid { grid-template-columns: 1fr; }
-      .incubate-steps { flex-direction: column; gap: 10px; }
-      .incubate-arrow { display: none; }
-      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .team-stats { grid-template-columns: repeat(2, 1fr); }
-      .member-body { padding: 12px 12px 14px; }
-      .contact-item { min-width: 100%; }
-    }
-
-    /* 小屏手机 */
-    @media (max-width: 380px) {
-      .hero-name { font-size: 22px; }
+    @media (max-width: 600px) {
+      .hero { padding: 48px 24px 56px; }
+      .hero-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .hero-avatar { width: 100px; height: 100px; }
+      .hero-name { font-size: 32px; }
+      .hero-tagline { font-size: 14px; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(5) { grid-column: span 2; border-top: 1px solid rgba(255,255,255,0.07); }
       .team-grid { grid-template-columns: 1fr; }
-      .member-photo { aspect-ratio: 4 / 3; }
+      .team-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 40px 20px; }
+      .inner { padding: 0 20px; }
+      .scroll-outer { margin: 0 -20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .people-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-name { font-size: 28px; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════
+       微信悬浮按钮
+    ══════════════════════════════ */
+    .wechat-float {
+      position: fixed;
+      right: 24px; bottom: 32px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .wechat-btn {
+      width: 52px; height: 52px;
+      background: #09b83e;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(9,184,62,0.4);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wechat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(9,184,62,0.5); }
+    .wechat-btn svg { width: 28px; height: 28px; fill: #fff; }
+    .wechat-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      background: var(--white);
+      padding: 2px 6px;
+      border-radius: 4px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-<div class="page-wrap">
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="avatar-wrap">
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar">
         <img src="https://sc02.alicdn.com/kf/H8ce7560d3c4a48e682edd263688900a37.jpg" alt="范浪 David" />
       </div>
-      <div class="hero-text">
-        <div class="hero-tag">阿里集团 · ICBU · 南粤大区 · 广州中区</div>
-        <div class="hero-name">范&nbsp;浪 &nbsp;<span style="font-size:20px;font-weight:400;opacity:.75">David</span></div>
-        <div class="hero-title">资深客户经理 · Senior Account Manager · ISV</div>
-        <div class="hero-badges">
-          <span class="badge">番禺服装</span>
-          <span class="badge">花都箱包皮具</span>
-          <span class="badge">白云汽配</span>
-          <span class="badge">荔湾鞋业</span>
-          <span class="badge">增城牛仔</span>
-          <span class="badge">Alibaba Worldwide Partner</span>
+      <div class="hero-badge-dot">✦</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span class="hero-eyebrow-text">Alibaba Group · ICBU · 南粤大区 · 广州中区</span>
+      </div>
+      <h1 class="hero-name">
+        范&nbsp;浪
+        <span class="hero-name-en">David</span>
+      </h1>
+      <p class="hero-title">资深客户经理 · Senior Account Manager · ISV</p>
+      <p class="hero-tagline">
+        我在广州最密集的产业带里跑了多年，见过太多工厂拿着世界级的产品，<strong>却因为不懂出海而只能卷内销价格</strong>。我做的事只有一件：帮他们把货卖到全球。
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge hero-badge--gold">✦ Alibaba Worldwide Partner</span>
+        <span class="hero-badge">番禺服装</span>
+        <span class="hero-badge">花都箱包皮具</span>
+        <span class="hero-badge">白云汽配</span>
+        <span class="hero-badge">荔湾鞋业</span>
+        <span class="hero-badge">增城牛仔</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="gold-bar"></div>
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-val">25<sub>+</sub></div>
+      <div class="stat-key">服务标杆商家</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">15<sub>+</sub></div>
+      <div class="stat-key">覆盖细分行业</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">6<sub>人</sub></div>
+      <div class="stat-key">专属服务团队</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">1<sub>年</sub></div>
+      <div class="stat-key">新客户保障期</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">7<sub>×12h</sub></div>
+      <div class="stat-key">全天候响应</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BRAND STORY ══ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      <span class="section-label-text">Brand Story</span>
+    </div>
+    <h2 class="section-title">广州工厂不缺产品，<em>缺的是出海的路</em></h2>
+    <p class="section-desc">一个扎根广州产业带多年的客户经理，能给你的不只是平台账号，而是一整套走通过的出海经验。</p>
+
+    <div class="story-grid">
+      <div class="story-text">
+        <p>广州是中国制造业的心脏之一。<strong>番禺的服装</strong>、<strong>花都的皮具</strong>、<strong>白云的汽配</strong>、<strong>荔湾的鞋业</strong>、<strong>增城的牛仔</strong>——每一个产业带都孕育着世界级的供应能力，却有太多工厂因为外贸壁垒而止步国内。</p>
+        <p>我在这些产业带里跑了多年。走访工厂、了解产品、理解成本结构，早已对这片土地形成最深层的商业认知。我知道什么工厂能打出海、什么赛道里还有利润空间、哪些市场最适配广州的产品优势。</p>
+        <p>选择我，不是选一个会开账号的销售，而是选一个<strong>真正懂你行业、懂你产品、懂你客户</strong>的出海伙伴。</p>
+
+        <div class="cluster-cloud">
+          <span class="cluster-tag">番禺 · 服装纺织</span>
+          <span class="cluster-tag">花都 · 皮具箱包</span>
+          <span class="cluster-tag">白云 · 汽车零配件</span>
+          <span class="cluster-tag">荔湾 · 鞋业皮革</span>
+          <span class="cluster-tag">增城 · 牛仔服装</span>
+          <span class="cluster-tag">广州 · 工程机械</span>
+          <span class="cluster-tag">广州 · 化工涂料</span>
+          <span class="cluster-tag">广州 · 新能源</span>
+        </div>
+      </div>
+
+      <div class="story-quote">
+        <p class="story-quote-text">
+          不卖套餐、不推广告——<strong>先看你的产品和供应链能不能打</strong>，再设计匹配的出海路径。<br /><br />
+          每一分钱投在国际站上，都要帮你算清楚回报。<strong>广州工厂不缺产品，缺的是一条看得见结果的出海路。</strong><br /><br />
+          我在广州，就在你旁边，随时面谈、随时上门。
+        </p>
+        <div class="story-quote-author">
+          <span class="story-quote-line"></span>
+          <span class="story-quote-name">范浪 David · 广州阿里中心</span>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <div class="gold-bar"></div>
+<!-- ══ TEAM ══ -->
+<section class="section section--alt">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      <span class="section-label-text">Service Team</span>
+    </div>
+    <h2 class="section-title">托付一人，<em>得到一队</em></h2>
+    <p class="section-desc">与我合作的每一位商家，背后是一支 6 人全链路专业团队——从签约当天起，每个服务环节都有专属负责人。</p>
 
-  <main class="content">
-
-    <!-- 个人简介 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-        </div>
-        <div class="section-title">个人简介</div>
-        <div class="section-line"></div>
+    <div class="team-intro">
+      <div class="team-intro-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 5.9a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
       </div>
-
-      <div class="intro-card">
-        <p class="intro-lead">
-          大家好，我是<strong>范浪（David）</strong>，阿里集团 B 类事业部 ICBU 南粤大区广州中区的<strong>资深客户经理</strong>，常驻广州阿里中心，主要负责广州核心产业带的外贸数字化服务。
-        </p>
-        <p class="intro-lead">
-          我的工作很简单——<strong>帮广州的工厂和工贸一体企业，用阿里国际站把货卖到全球。</strong>我日常跑番禺的服装、花都的箱包皮具、白云的汽配、荔湾的鞋业、增城的牛仔，跟这些产业带里的工厂老板和外贸团队泡在一起，非常清楚大家面临的真实问题：不懂英文不敢碰外贸、1688 卷价格卷到没利润、怕跨境手续繁琐不敢迈第一步。
-        </p>
-        <div class="intro-tagline">
-          用最实在的方式，让广州的工厂少走弯路、少花冤枉钱，把跨境这件事做成。
-        </div>
+      <div class="team-intro-text">
+        <strong>一个客户经理背后，是一整支专业作战团队。</strong>南粤大区广州中区 · 覆盖管理 / 业务 / 运营 / 平台搭建 / 新客保障 / 新媒体六大岗位，杜绝"签完就没人管"的行业痼疾。
       </div>
-    </section>
+    </div>
 
-    <!-- 服务团队 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 5.9a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
-        </div>
-        <div class="section-title">专属服务团队</div>
-        <div class="section-line"></div>
+    <div class="team-stats-row">
+      <div class="team-stat">
+        <div class="team-stat-val">6<span>人</span></div>
+        <div class="team-stat-key">专业团队规模</div>
       </div>
-
-      <!-- 团队总纲 -->
-      <div class="team-lead">
-        <div class="team-lead-title">一个客户经理背后，是一整支专业作战团队</div>
-        <div class="team-lead-desc">
-          与我合作的每一位商家，享受的都不是"一个人的服务"——<strong>而是南粤大区广州中区一支覆盖管理、业务、运营、平台搭建、售后保障、新媒体的 6 人专业团队</strong>。从签约、店铺搭建到日常运营、内容拍摄、售后跟进，每一个环节都有对应的专家为你保驾护航，真正做到"托付一人，得到一队"。
-        </div>
+      <div class="team-stat">
+        <div class="team-stat-val">6<span>岗位</span></div>
+        <div class="team-stat-key">全链路分工覆盖</div>
       </div>
+      <div class="team-stat">
+        <div class="team-stat-val">12<span>月</span></div>
+        <div class="team-stat-key">新客户专属保障期</div>
+      </div>
+      <div class="team-stat">
+        <div class="team-stat-val">7×12<span>h</span></div>
+        <div class="team-stat-key">在线响应承诺</div>
+      </div>
+    </div>
 
-      <!-- 团队数据条 -->
-      <div class="team-stats">
-        <div class="team-stat">
-          <div class="team-stat-val">6<span>人</span></div>
-          <div class="team-stat-key">专业服务团队</div>
+    <div class="team-grid">
+
+      <!-- 李振邦 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/H2b8e75ad32c6443a80954ddff2ae552cQ.jpg" alt="李振邦" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">李振邦</div>
+            <span class="member-role-badge">团队管理负责人</span>
+          </div>
         </div>
-        <div class="team-stat">
-          <div class="team-stat-val">6<span>大岗位</span></div>
-          <div class="team-stat-key">全链路覆盖</div>
-        </div>
-        <div class="team-stat">
-          <div class="team-stat-val">1<span>年</span></div>
-          <div class="team-stat-key">新客户保障期</div>
-        </div>
-        <div class="team-stat">
-          <div class="team-stat-val">7<span>×12h</span></div>
-          <div class="team-stat-key">在线响应</div>
+        <div class="member-body">
+          <div class="member-headline">团队总舵手 · 战略统筹与资源调配</div>
+          <div class="member-desc">统筹团队整体运作标准，把控商家服务满意度；负责跨部门资源协调与高优疑难处理，是您与阿里内部的"直通车"。</div>
+          <div class="member-chips">
+            <span class="member-chip">团队管理</span>
+            <span class="member-chip">资源协调</span>
+            <span class="member-chip">疑难升级</span>
+          </div>
         </div>
       </div>
 
-      <!-- 团队成员卡片 -->
-      <div class="team-grid">
-
-        <!-- 1 团队管理负责人 · 李振邦 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/H2b8e75ad32c6443a80954ddff2ae552cQ.jpg" alt="李振邦"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">李振邦</div>
-              <span class="member-role-tag">团队管理负责人</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">团队总舵手 · 战略与资源</div>
-            <div class="member-services">
-              统筹团队整体运作，把控服务标准与商家满意度；负责跨部门资源协调、疑难商家的高优先级介入，是您与阿里内部对接的"直通车"。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">团队管理</span>
-              <span class="member-tag">资源协调</span>
-              <span class="member-tag">升级处理</span>
-            </div>
+      <!-- 洪智 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/Hb248777171964a85a1404095b1883b53Z.jpg" alt="洪智" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">洪 智</div>
+            <span class="member-role-badge">团队业务负责人</span>
           </div>
         </div>
-
-        <!-- 2 团队业务负责人 · 洪智 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/Hb248777171964a85a1404095b1883b53Z.jpg" alt="洪智"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">洪 智</div>
-              <span class="member-role-tag">团队业务负责人</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">业务方向盘 · 策略与打法</div>
-            <div class="member-services">
-              主导商家出海策略规划与业务节奏把控；深度参与产业带客户的商业模式诊断，提供从选品到市场破局的实战级顾问建议。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">业务规划</span>
-              <span class="member-tag">策略咨询</span>
-              <span class="member-tag">市场破局</span>
-            </div>
+        <div class="member-body">
+          <div class="member-headline">业务方向盘 · 出海策略与商业诊断</div>
+          <div class="member-desc">主导商家出海策略规划与业务节奏把控；深度参与产业带客户的商业模式诊断，提供从选品到市场破局的实战建议。</div>
+          <div class="member-chips">
+            <span class="member-chip">业务规划</span>
+            <span class="member-chip">策略咨询</span>
+            <span class="member-chip">市场破局</span>
           </div>
         </div>
-
-        <!-- 3 团队运营专家 · 莫志坤 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/Hc45df9e3e7424054ae438240d41954e4O.jpg" alt="莫志坤"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">莫志坤</div>
-              <span class="member-role-tag">团队运营专家</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">流量操盘手 · P4P 与转化</div>
-            <div class="member-services">
-              精通 P4P / 直通车 / 全站推广的账户诊断与优化；关键词布局、出价策略、地域溢价、时段调控——把每一分推广预算都花在刀刃上。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">P4P 优化</span>
-              <span class="member-tag">流量诊断</span>
-              <span class="member-tag">转化提升</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4 新客户首年保障专员 · 何凤铷 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/Hdae1797c11284fecb3c3424a9e1d356eO.jpg" alt="何凤铷"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">何凤铷</div>
-              <span class="member-role-tag">新客首年保障专员</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">首年护航员 · 从 0 到 1</div>
-            <div class="member-services">
-              专为新签商家提供 12 个月贴身保障：从实地认证、信保开通到店铺装修、发品指导，全流程手把手陪跑，杜绝"签完就没人管"。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">新客陪跑</span>
-              <span class="member-tag">认证协助</span>
-              <span class="member-tag">首年保障</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5 平台搭建师 · 陆春李 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/H4566c2a91eec439d9ccf4aabf675979b5.jpg" alt="陆春李"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">陆春李</div>
-              <span class="member-role-tag">平台搭建师</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">店铺美学官 · 视觉与结构</div>
-            <div class="member-services">
-              专业负责店铺装修、详情页设计、主图优化；从买家视角出发打磨每一处视觉细节，让商家店铺具备"点击即信任"的国际竞争力。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">店铺装修</span>
-              <span class="member-tag">详情页设计</span>
-              <span class="member-tag">主图优化</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6 新媒体负责人 · 黄艳 -->
-        <div class="member-card">
-          <div class="member-photo">
-            <img src="https://sc02.alicdn.com/kf/H81468dee837a4a61b7211be7a0af9154l.jpg" alt="黄艳"/>
-            <div class="member-name-overlay">
-              <div class="member-name-cn">黄 艳</div>
-              <span class="member-role-tag">新媒体负责人</span>
-            </div>
-          </div>
-          <div class="member-body">
-            <div class="member-title">内容操盘手 · 短视频与获客</div>
-            <div class="member-services">
-              统筹 TikTok / YouTube / 独立站等多平台内容矩阵；主导短视频脚本、拍摄、剪辑与投放，为商家在私域获客赛道打开第二增长曲线。
-            </div>
-            <div class="member-tags">
-              <span class="member-tag">短视频矩阵</span>
-              <span class="member-tag">TikTok 运营</span>
-              <span class="member-tag">私域获客</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- 核心能力 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 11.75A1.25 1.25 0 1 0 9 14.25 1.25 1.25 0 0 0 9 11.75zm6 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-4c-2.33 0-4.32-1.45-5.12-3.5h10.24C16.32 14.55 14.33 16 12 16z"/></svg>
-        </div>
-        <div class="section-title">核心能力</div>
-        <div class="section-line"></div>
       </div>
 
-      <!-- 能力总纲 -->
-      <div class="cap-lead">
-        做客户经理，不只是卖一个平台账号——<strong>是帮一家工厂找到出海的方向、建起外贸的团队、跑通从 0 到 1 的完整路径，然后陪着他们走向规模化。</strong>
+      <!-- 莫志坤 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/Hc45df9e3e7424054ae438240d41954e4O.jpg" alt="莫志坤" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">莫志坤</div>
+            <span class="member-role-badge">团队运营专家</span>
+          </div>
+        </div>
+        <div class="member-body">
+          <div class="member-headline">流量操盘手 · P4P 精准投放与转化</div>
+          <div class="member-desc">精通 P4P / 直通车 / 全站推广的账户诊断与优化；关键词布局、出价策略、地域溢价调控——把每一分预算花在刀刃上。</div>
+          <div class="member-chips">
+            <span class="member-chip">P4P 优化</span>
+            <span class="member-chip">流量诊断</span>
+            <span class="member-chip">ROI 提升</span>
+          </div>
+        </div>
       </div>
 
-      <!-- 第一层：产业带深耕 -->
-      <div class="cap-block cap-block--full">
-        <div class="cap-block-head">
-          <div class="cap-index">壹</div>
+      <!-- 何凤铷 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/Hdae1797c11284fecb3c3424a9e1d356eO.jpg" alt="何凤铷" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">何凤铷</div>
+            <span class="member-role-badge">新客首年保障专员</span>
+          </div>
+        </div>
+        <div class="member-body">
+          <div class="member-headline">首年护航员 · 全流程 0→1 贴身陪跑</div>
+          <div class="member-desc">专为新签商家提供 12 个月保障：实地认证、信保开通、店铺装修、发品指导——手把手陪跑，杜绝"签完就没人管"。</div>
+          <div class="member-chips">
+            <span class="member-chip">新客陪跑</span>
+            <span class="member-chip">认证协助</span>
+            <span class="member-chip">首年保障</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 陆春李 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/H4566c2a91eec439d9ccf4aabf675979b5.jpg" alt="陆春李" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">陆春李</div>
+            <span class="member-role-badge">平台搭建师</span>
+          </div>
+        </div>
+        <div class="member-body">
+          <div class="member-headline">店铺美学官 · 视觉结构与品牌呈现</div>
+          <div class="member-desc">专业负责店铺装修、详情页设计、主图优化；从国际买家视角打磨每一处细节，让店铺具备"点击即信任"的国际竞争力。</div>
+          <div class="member-chips">
+            <span class="member-chip">店铺装修</span>
+            <span class="member-chip">详情页</span>
+            <span class="member-chip">主图优化</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 黄艳 -->
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="https://sc02.alicdn.com/kf/H81468dee837a4a61b7211be7a0af9154l.jpg" alt="黄艳" />
+          <div class="member-photo-overlay"></div>
+          <div class="member-overlay-content">
+            <div class="member-name">黄 艳</div>
+            <span class="member-role-badge">新媒体负责人</span>
+          </div>
+        </div>
+        <div class="member-body">
+          <div class="member-headline">内容操盘手 · 短视频矩阵与私域获客</div>
+          <div class="member-desc">统筹 TikTok / YouTube / 独立站等多平台内容矩阵；主导短视频脚本、拍摄、投放，为商家打开国际站之外的第二增长曲线。</div>
+          <div class="member-chips">
+            <span class="member-chip">TikTok 运营</span>
+            <span class="member-chip">短视频矩阵</span>
+            <span class="member-chip">私域获客</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAPABILITY ══ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      <span class="section-label-text">Core Capabilities</span>
+    </div>
+    <h2 class="section-title">做客户经理，<em>不只是卖账号</em></h2>
+    <p class="section-desc">是帮一家工厂找到出海方向、建起外贸团队、跑通从 0 到 1 的完整路径，然后陪着他们走向规模化。</p>
+
+    <div class="cap-grid">
+
+      <!-- 壹 产业带认知 -->
+      <div class="cap-block">
+        <div class="cap-head">
+          <div class="cap-num">壹</div>
           <div>
-            <div class="cap-block-title">广州产业带深耕</div>
-            <div class="cap-block-sub">不是泛泛了解，是真正扎进去跑出来的认知</div>
+            <div class="cap-head-title">广州产业带深度认知</div>
+            <div class="cap-head-sub">不是泛泛了解，是真正扎进去跑出来的</div>
           </div>
         </div>
-        <div class="cap-block-body">
-          <p>广州产业带星罗棋布——番禺的服装、花都的皮具、白云的汽配、荔湾的鞋业、增城的牛仔，每一个区都是一座细分的产业宇宙。我在这里跑了数年，走访过的工厂、见过的老板、聊过的产品，早已沉淀成对这片土地最深层的商业认知。</p>
+        <div class="cap-body">
+          <p>每一个产业带的成本结构、出货周期、竞品价格带、最适合的出口市场——这些认知不是从报告里读来的，是走访数百家工厂后沉淀下来的第一手判断。</p>
           <div class="cap-tags">
-            <span class="cap-tag">熟悉各区成本结构</span>
-            <span class="cap-tag">了解工厂出货周期</span>
-            <span class="cap-tag">掌握竞品价格带</span>
-            <span class="cap-tag">清楚主攻海外市场</span>
-            <span class="cap-tag">熟悉广交会资质体系</span>
-            <span class="cap-tag">了解专精特新认定路径</span>
+            <span class="cap-tag">各区成本结构</span>
+            <span class="cap-tag">工厂出货周期</span>
+            <span class="cap-tag">竞品价格带</span>
+            <span class="cap-tag">适配出口市场</span>
+            <span class="cap-tag">广交会资质</span>
+            <span class="cap-tag">专精特新认定</span>
           </div>
         </div>
       </div>
 
-      <!-- 第二层：0→1孵化 -->
-      <div class="cap-block cap-block--full cap-block--accent">
-        <div class="cap-block-head">
-          <div class="cap-index cap-index--light">贰</div>
+      <!-- 贰 外贸团队 -->
+      <div class="cap-block">
+        <div class="cap-head">
+          <div class="cap-num">贰</div>
           <div>
-            <div class="cap-block-title" style="color:#fff;">从 0 到 1 的孵化体系</div>
-            <div class="cap-block-sub" style="color:rgba(255,255,255,0.65);">不让工厂在外贸门口止步，陪他们打通第一步</div>
+            <div class="cap-head-title">外贸团队的招 · 用 · 育 · 留</div>
+            <div class="cap-head-sub">工厂最大的短板不是产品，是没有会打仗的外贸人</div>
           </div>
         </div>
-        <div class="cap-block-body">
-          <div class="incubate-steps">
-            <div class="incubate-step">
-              <div class="step-dot">01</div>
-              <div class="step-content">
-                <div class="step-title">诊断与选品</div>
-                <div class="step-desc">先看产品能不能打：竞品分析、价格带定位、出口适配市场研判，从源头避免无效投入。</div>
+        <div class="cap-body">
+          <div class="people-row">
+            <div class="people-item">
+              <div class="people-label">
+                <div class="people-icon"><svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                招人
               </div>
+              <div class="people-desc">梳理外贸岗位画像，明确初期配置策略，从结构上帮你少走弯路。</div>
             </div>
-            <div class="incubate-arrow">→</div>
-            <div class="incubate-step">
-              <div class="step-dot">02</div>
-              <div class="step-content">
-                <div class="step-title">店铺搭建</div>
-                <div class="step-desc">实地认证、信保开通、店铺定位、主图标题、关键词布局——从零搭建符合平台逻辑的出海基础设施。</div>
+            <div class="people-item">
+              <div class="people-label">
+                <div class="people-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
+                用人
               </div>
+              <div class="people-desc">搭询盘分配工作流，AI 工具提升人效，不靠人堆出效率。</div>
             </div>
-            <div class="incubate-arrow">→</div>
-            <div class="incubate-step">
-              <div class="step-dot">03</div>
-              <div class="step-content">
-                <div class="step-title">流量启动</div>
-                <div class="step-desc">P4P 精准投放、直通车计划搭建、关键词出价策略，让第一批精准曝光触达真实买家。</div>
+            <div class="people-item">
+              <div class="people-label">
+                <div class="people-icon"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
+                育人
               </div>
+              <div class="people-desc">平台操盘培训、询盘复盘、话术打磨，让外贸团队持续进化。</div>
             </div>
-            <div class="incubate-arrow">→</div>
-            <div class="incubate-step">
-              <div class="step-dot">04</div>
-              <div class="step-content">
-                <div class="step-title">询盘转化</div>
-                <div class="step-desc">AI 工具辅助买家背调、多语种回盘模板、跟进节奏设计，让第一条真实订单尽快落地。</div>
+            <div class="people-item">
+              <div class="people-label">
+                <div class="people-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                留人
               </div>
+              <div class="people-desc">搭建成长路径与激励机制，留住人才才能真正留住订单。</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 第三层：招育留人 -->
-      <div class="cap-block cap-block--full">
-        <div class="cap-block-head">
-          <div class="cap-index">叁</div>
+      <!-- 叁 0→1 孵化 (全宽) -->
+      <div class="cap-block cap-block--wide cap-block--dark">
+        <div class="cap-head">
+          <div class="cap-num">叁</div>
           <div>
-            <div class="cap-block-title">外贸团队的招·用·育·留</div>
-            <div class="cap-block-sub">工厂最大的短板不是产品，是没有会打仗的外贸人</div>
+            <div class="cap-head-title">从 0 到 1 的完整孵化路径</div>
+            <div class="cap-head-sub">不让工厂在外贸门口止步，陪他们打通第一单</div>
           </div>
         </div>
-        <div class="cap-block-body">
-          <div class="people-grid">
-            <div class="people-card">
-              <div class="people-icon">
-                <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-              </div>
-              <div class="people-label">招人</div>
-              <div class="people-body">协助工厂梳理外贸岗位需求画像，明确初期配置策略——是先招业务还是先做运营，从结构上帮你少走弯路。</div>
+        <div class="cap-body">
+          <div class="steps">
+            <div class="step">
+              <div class="step-n">01</div>
+              <div class="step-t">诊断与选品</div>
+              <div class="step-d">竞品分析、价格带定位、出口适配市场研判，从源头避免无效投入。</div>
             </div>
-            <div class="people-card">
-              <div class="people-icon">
+            <div class="step">
+              <div class="step-n">02</div>
+              <div class="step-t">店铺基建</div>
+              <div class="step-d">实地认证、信保开通、店铺装修、主图标题、关键词布局，搭建出海基础设施。</div>
+            </div>
+            <div class="step">
+              <div class="step-n">03</div>
+              <div class="step-t">流量启动</div>
+              <div class="step-d">P4P 精准投放、直通车计划搭建、关键词出价策略，触达真实买家。</div>
+            </div>
+            <div class="step">
+              <div class="step-n">04</div>
+              <div class="step-t">询盘转化</div>
+              <div class="step-d">AI 辅助买家背调、多语种回盘模板、跟进节奏设计，第一单落地。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHILOSOPHY ══ -->
+<section class="section section--dark">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      <span class="section-label-text">Philosophy</span>
+    </div>
+    <h2 class="section-title">我的<em>服务原则</em></h2>
+
+    <div class="phil-layout">
+      <div class="phil-left">
+        <p class="phil-statement">
+          不卖套餐，不推广告。<br />
+          <strong>先看你能不能打，再设计怎么打。</strong>
+        </p>
+        <div class="phil-principles">
+          <div class="phil-p">
+            <div class="phil-p-dot"></div>
+            <div class="phil-p-text">每一分钱投在国际站上，都要帮你算清楚 ROI，投前诊断、投中监控、投后复盘。</div>
+          </div>
+          <div class="phil-p">
+            <div class="phil-p-dot"></div>
+            <div class="phil-p-text">我不做"签完就消失"的业务，每一位商家在签约后都有专属服务团队跟进。</div>
+          </div>
+          <div class="phil-p">
+            <div class="phil-p-dot"></div>
+            <div class="phil-p-text">我在广州，就在你旁边——随时面谈，随时上门，产业带就是我的主战场。</div>
+          </div>
+          <div class="phil-p">
+            <div class="phil-p-dot"></div>
+            <div class="phil-p-text">不承诺虚假的曝光量，只承诺真实的成长路径和可量化的结果。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phil-right">
+        <div class="phil-card">
+          <div class="phil-card-label">SERVICE COMMITMENT</div>
+          <div class="phil-card-items">
+            <div class="phil-card-item">
+              <div class="phil-card-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
               </div>
-              <div class="people-label">用人</div>
-              <div class="people-body">外贸业务员如何分配询盘、如何设定回复 SLA、如何用 AI 工具提升人效——帮老板搭工作流而不只是靠人堆效率。</div>
-            </div>
-            <div class="people-card">
-              <div class="people-icon">
-                <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+              <div>
+                <div class="phil-card-item-title">诊断先行，再谈方案</div>
+                <div class="phil-card-item-desc">不是先卖账号，是先判断你的产品和供应链能否支撑出海。</div>
               </div>
-              <div class="people-label">育人</div>
-              <div class="people-body">提供平台操盘培训、询盘诊断复盘、行业话术打磨；定期分享产业带竞品动态，让外贸团队不断进化。</div>
             </div>
-            <div class="people-card">
-              <div class="people-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <div class="phil-card-item">
+              <div class="phil-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
               </div>
-              <div class="people-label">留人</div>
-              <div class="people-body">帮老板搭建外贸业务员的成长路径与激励机制，让优秀的人看得到前途——留住人才才能真正留住订单。</div>
+              <div>
+                <div class="phil-card-item-title">全程保障，不是单点服务</div>
+                <div class="phil-card-item-desc">6 人团队分工明确，确保每个环节都有专属责任人，不留服务盲区。</div>
+              </div>
+            </div>
+            <div class="phil-card-item">
+              <div class="phil-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+              </div>
+              <div>
+                <div class="phil-card-item-title">真实案例，数据说话</div>
+                <div class="phil-card-item-desc">用真实的在管商家数据而非行业平均值，告诉你合作后可以期待什么。</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-    </section>
-
-    <!-- 服务理念 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+<!-- ══ CASES ══ -->
+<section class="section section--alt">
+  <div class="section-inner">
+    <div class="cases-header-row">
+      <div>
+        <div class="section-label" style="margin-bottom:6px">
+          <span class="section-label-line"></span>
+          <span class="section-label-text">Real Cases</span>
         </div>
-        <div class="section-title">服务理念</div>
-        <div class="section-line"></div>
+        <h2 class="section-title">真实在管商家，<em>真实数据</em></h2>
       </div>
+      <div class="cases-tip">覆盖 15+ 行业 · 25 家标杆商家 · 均已实地认证<br/><span>鼠标悬停可暂停</span></div>
+    </div>
 
-      <div class="philosophy-card">
-        <div class="phil-quote">
-          <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+    <div class="scroll-outer">
+      <div class="scroll-track" id="scrollTrack">
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(60,180,120,0.08);border-color:rgba(60,180,120,0.3);color:#1a7a4a">新能源 · 摩托车</div>
+          <div class="case-company">广州太空人新能源科技有限公司</div>
+          <div class="case-quote">"3个月信保GMV近191万，年方案¥133,200，爆发式增长"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">191万</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">¥133,200</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">6年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">GMV标杆大户</span></div>
         </div>
-        <div class="phil-text">
-          不卖套餐、不推广告——<strong>先看你的产品和供应链能不能打</strong>，再设计匹配的出海路径。<br /><br />
-          每一分钱投在国际站上，都要帮你算清楚回报。<strong>广州工厂不缺产品，缺的是一条看得见结果的出海路。</strong>
-          我在广州，就在你旁边，随时面谈、随时上门。
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(100,160,80,0.08);border-color:rgba(100,160,80,0.3);color:#3a7a1a">化学品 · 油漆涂料</div>
+          <div class="case-company">广州市橡树屋防水材料有限公司</div>
+          <div class="case-quote">"年方案¥12万，信保GMV¥34,956，近30天曝光超1.1万"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥120,000</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">34,956</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">2年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">高方案大户</span></div>
         </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4);color:#8a6d1a">汽配 · 汽车照明系统</div>
+          <div class="case-company">广州鸿宸科技有限公司</div>
+          <div class="case-quote">"询盘23个，曝光6万次，信保GMV¥40,571"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥120,000</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">40,571</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">5年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">高曝光高询盘</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(90,120,201,0.08);border-color:rgba(90,120,201,0.3);color:#3a5cb5">电气设备 · 工业控制</div>
+          <div class="case-company">广州拓燊自动化科技有限公司</div>
+          <div class="case-quote">"商机转化率高达41.10%，工控自动化行业标杆"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">41.10%</div><div class="case-metric-key">商机转化率</div></div>
+            <div class="case-metric"><div class="case-metric-val">¥35,800</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">4年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">超高转化率</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(90,120,201,0.08);border-color:rgba(90,120,201,0.3);color:#3a5cb5">服装配饰 · 帽子</div>
+          <div class="case-company">广州金元素电子商务有限公司</div>
+          <div class="case-quote">"商机转化率52%，近30天环比暴涨113%"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">52.17%</div><div class="case-metric-key">商机转化率</div></div>
+            <div class="case-metric"><div class="case-metric-val">+113%</div><div class="case-metric-key">30天转化环比</div></div>
+            <div class="case-metric"><div class="case-metric-val">2年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">高效转化</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(160,120,60,0.08);border-color:rgba(160,120,60,0.3);color:#7a5a1a">工程机械 · 建筑机械</div>
+          <div class="case-company">广州大壕机械设备有限公司</div>
+          <div class="case-quote">"转化率17.39%，信保GMV¥20,714，2年快速起量"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥49,800</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">20,714</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">17.39%</div><div class="case-metric-key">商机转化率</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">高转化机械商</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(201,90,90,0.08);border-color:rgba(201,90,90,0.3);color:#b94a4a">美妆 · 香水香氛</div>
+          <div class="case-company">广州 · 美妆标杆商家</div>
+          <div class="case-quote">"1年内实地认证+信保亮灯，近三月GMV快速起量"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥16,000</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">9,774</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">1年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">信保亮灯</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(80,80,80,0.07);border-color:rgba(80,80,80,0.2);color:#444">包装印刷 · 印刷服务</div>
+          <div class="case-company">广州市科唯奇贸易有限公司</div>
+          <div class="case-quote">"曝光2.4万次，信保GMV¥14,732，6年稳健经营"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥35,800</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">14,732</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">6年</div><div class="case-metric-key">会员年限</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">6年稳健商家</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(230,140,60,0.08);border-color:rgba(230,140,60,0.3);color:#b56020">母婴玩具 · 户外用品</div>
+          <div class="case-company">凯盖德（广州）户外用品有限公司</div>
+          <div class="case-quote">"商机转化率16%，信保GMV¥12,285，首年起量"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">¥10,002</div><div class="case-metric-key">年方案金额</div></div>
+            <div class="case-metric"><div class="case-metric-val">12,285</div><div class="case-metric-key">近3月信保GMV</div></div>
+            <div class="case-metric"><div class="case-metric-val">16.09%</div><div class="case-metric-key">商机转化率</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 实地认证</span><span class="case-badge">GMV高速增长</span></div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-ind-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4);color:#8a6d1a">灯具照明 · 室内照明</div>
+          <div class="case-company">广州市华升塑料制品有限公司</div>
+          <div class="case-quote">"14年深度绑定，平台忠诚度极高，资深出海老品牌"</div>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="case-metric-val">14年</div><div class="case-metric-key">会员年限</div></div>
+            <div class="case-metric"><div class="case-metric-val">稳定</div><div class="case-metric-key">P4P投入状态</div></div>
+            <div class="case-metric"><div class="case-metric-val">存量</div><div class="case-metric-key">服务阶段</div></div>
+          </div>
+          <div class="case-badge-row"><span class="case-badge">✦ 14年资深会员</span><span class="case-badge">实地认证</span></div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- 同行案例 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+<!-- ══ CONTACT ══ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      <span class="section-label-text">Contact</span>
+    </div>
+    <h2 class="section-title">随时<em>开始对话</em></h2>
+    <p class="section-desc">我在广州，你的工厂在广州——见面比发消息更有效率。扫码加微信，或直接致电，我们约一次上门拜访。</p>
+
+    <div class="contact-layout">
+      <div class="contact-left">
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.57 21 3 13.43 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">手机 / 微信同号</div>
+              <div class="contact-value">19521089136</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">企业邮箱</div>
+              <div class="contact-value">wb-fl821156@alibaba-inc.com</div>
+            </div>
+          </div>
         </div>
-        <div class="section-title">同行标杆案例</div>
-        <div class="section-line"></div>
-      </div>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.7;">覆盖 15+ 细分行业 · 25 家真实在管客户 · 均已完成实地认证 &nbsp;｜&nbsp; <span style="color:var(--gold)">鼠标悬停可暂停</span></p>
-
-      <div class="scroll-outer">
-        <div class="scroll-track" id="scrollTrack">
-
-          <!-- ① 美妆·香水 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(201,90,90,0.08);border-color:rgba(201,90,90,0.3);color:#b94a4a;">美妆 · 香水香氛</div>
-              <div class="case-company">广州·美妆标杆商家</div>
-              <div class="case-highlight">"1年内实地认证+信保亮灯，近三月信保GMV快速起量"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥16,000</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">9,774</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">1年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 信保亮灯</div>
-          </div>
-
-          <!-- ② 服装·帽子 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(90,120,201,0.08);border-color:rgba(90,120,201,0.3);color:#3a5cb5;">服装配饰 · 帽子</div>
-              <div class="case-company">广州金元素电子商务有限公司</div>
-              <div class="case-highlight">"商机转化率52%，近30天环比+113%，高效转化典范"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">52.17%</div><div class="metric-key">商机转化率</div></div>
-              <div class="metric-item"><div class="metric-val">+113%</div><div class="metric-key">30天转化环比</div></div>
-              <div class="metric-item"><div class="metric-val">2年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高转化</div>
-          </div>
-
-          <!-- ③ 灯具照明 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4);color:#8a6d1a;">灯具照明 · 室内照明</div>
-              <div class="case-company">广州市华升塑料制品有限公司</div>
-              <div class="case-highlight">"14年深度绑定，平台忠诚度极高，资深出海老品牌"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">14年</div><div class="metric-key">会员年限</div></div>
-              <div class="metric-item"><div class="metric-val">¥708</div><div class="metric-key">P4P余额</div></div>
-              <div class="metric-item"><div class="metric-val">存量</div><div class="metric-key">服务阶段</div></div>
-            </div>
-            <div class="case-badge">✦ 14年资深会员 · 实地认证</div>
-          </div>
-
-          <!-- ④ 珠宝饰品 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(90,180,150,0.08);border-color:rgba(90,180,150,0.3);color:#2a7a5a;">珠宝眼镜 · 时尚饰品</div>
-              <div class="case-company">广州傲俪饰品有限公司</div>
-              <div class="case-highlight">"P4P余额¥10,000，高投入流量运营意愿强"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥10,000</div><div class="metric-key">P4P余额</div></div>
-              <div class="metric-item"><div class="metric-val">3年</div><div class="metric-key">会员年限</div></div>
-              <div class="metric-item"><div class="metric-val">活跃</div><div class="metric-key">客户状态</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高投入推广</div>
-          </div>
-
-          <!-- ⑤ 汽配·零部件 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(80,80,80,0.07);border-color:rgba(80,80,80,0.2);color:#444;">汽配 · 交通零部件</div>
-              <div class="case-company">广州德量汽车配件有限公司</div>
-              <div class="case-highlight">"11年资深汽配出海商家，行业积累深厚，信誉优质"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">11年</div><div class="metric-key">会员年限</div></div>
-              <div class="metric-item"><div class="metric-val">成熟期</div><div class="metric-key">合作阶段</div></div>
-              <div class="metric-item"><div class="metric-val">优质</div><div class="metric-key">信保状态</div></div>
-            </div>
-            <div class="case-badge">✦ 11年资深会员 · 实地认证</div>
-          </div>
-
-          <!-- ⑥ 消费电子·医美 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(160,90,200,0.08);border-color:rgba(160,90,200,0.3);color:#7a3aaa;">消费电子 · 医学美容</div>
-              <div class="case-company">广州帝蒙电子科技有限公司</div>
-              <div class="case-highlight">"8年深耕医美电子细分赛道，平台经验丰富"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">8年</div><div class="metric-key">会员年限</div></div>
-              <div class="metric-item"><div class="metric-val">医美</div><div class="metric-key">细分赛道</div></div>
-              <div class="metric-item"><div class="metric-val">成熟</div><div class="metric-key">运营状态</div></div>
-            </div>
-            <div class="case-badge">✦ 8年资深 · 实地认证</div>
-          </div>
-
-          <!-- ⑦ 珠宝·手表 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(90,180,150,0.08);border-color:rgba(90,180,150,0.3);color:#2a7a5a;">珠宝眼镜 · 手表</div>
-              <div class="case-company">广州乾飞科技有限公司</div>
-              <div class="case-highlight">"新进手表贸易商，首年方案即投入¥6,000，起步快"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥6,000</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">1年</div><div class="metric-key">会员年限</div></div>
-              <div class="metric-item"><div class="metric-val">新锐</div><div class="metric-key">成长阶段</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高潜力新锐</div>
-          </div>
-
-          <!-- ⑧ 母婴·玩具 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(230,140,60,0.08);border-color:rgba(230,140,60,0.3);color:#b56020;">母婴玩具 · 户外用品</div>
-              <div class="case-company">凯盖德（广州）户外用品有限公司</div>
-              <div class="case-highlight">"曝光3,522次，转化16%，信保GMV¥12,285"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥10,002</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">12,285</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">16.09%</div><div class="metric-key">商机转化率</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · GMV高速增长</div>
-          </div>
-
-          <!-- ⑨ 工业机械·制冷 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(60,140,200,0.08);border-color:rgba(60,140,200,0.3);color:#1a5a8a;">工业机械 · 制冷设备</div>
-              <div class="case-company">广州热芯科技有限公司</div>
-              <div class="case-highlight">"询盘12个，转化率25.28%，P4P余额充裕"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">25.28%</div><div class="metric-key">商机转化率</div></div>
-              <div class="metric-item"><div class="metric-val">¥3,804</div><div class="metric-key">P4P余额</div></div>
-              <div class="metric-item"><div class="metric-val">2年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高转化工业品</div>
-          </div>
-
-          <!-- ⑩ 礼品·工艺品 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(200,90,140,0.08);border-color:rgba(200,90,140,0.3);color:#aa3a6a;">礼品工艺 · 工艺品</div>
-              <div class="case-company">广州棠杉贸易进出口有限公司</div>
-              <div class="case-highlight">"外贸新秀，信保GMV¥3,235，月均点击超100次"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥10,501</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">3,235</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">1年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 新锐潜力商</div>
-          </div>
-
-          <!-- ⑪ 商业设备·印刷机 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(80,80,80,0.07);border-color:rgba(80,80,80,0.2);color:#444;">商业设备 · 印刷机</div>
-              <div class="case-company">广州市科唯奇贸易有限公司</div>
-              <div class="case-highlight">"曝光2.4万次，信保GMV¥14,732，6年稳健经营"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥35,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">14,732</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">6年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 6年稳健商家</div>
-          </div>
-
-          <!-- ⑫ 化工·油漆涂料 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(100,160,80,0.08);border-color:rgba(100,160,80,0.3);color:#3a7a1a;">化学品 · 油漆涂料</div>
-              <div class="case-company">广州市橡树屋防水材料有限公司</div>
-              <div class="case-highlight">"年方案¥12万，信保GMV¥34,956，近30天曝光超1.1万"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥120,000</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">34,956</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">2年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高方案大户</div>
-          </div>
-
-          <!-- ⑬ 新能源·摩托车 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(60,180,120,0.08);border-color:rgba(60,180,120,0.3);color:#1a7a4a;">新能源 · 摩托车</div>
-              <div class="case-company">广州太空人新能源科技有限公司</div>
-              <div class="case-highlight">"3个月信保GMV近¥191万，年方案¥133,200，爆发增长"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥133,200</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">191万</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">6年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · GMV标杆大户</div>
-          </div>
-
-          <!-- ⑭ 汽配·照明系统 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.4);color:#8a6d1a;">汽配 · 汽车照明系统</div>
-              <div class="case-company">广州鸿宸科技有限公司</div>
-              <div class="case-highlight">"询盘23个，曝光6万次，P4P余额¥11,404"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥120,000</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">40,571</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">5年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高曝光高询盘</div>
-          </div>
-
-          <!-- ⑮ 汽配·内饰件 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(80,80,80,0.07);border-color:rgba(80,80,80,0.2);color:#444;">汽配 · 汽车内饰件</div>
-              <div class="case-company">广州市欧若拉出口贸易有限公司</div>
-              <div class="case-highlight">"月询盘达70个，内饰件出口专家，4年稳定增长"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥45,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">10,401</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">4年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 月询盘70+</div>
-          </div>
-
-          <!-- ⑯ 工程机械·建材 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(160,120,60,0.08);border-color:rgba(160,120,60,0.3);color:#7a5a1a;">工程机械 · 建筑机械</div>
-              <div class="case-company">广州大壕机械设备有限公司</div>
-              <div class="case-highlight">"转化率17.39%，信保GMV¥20,714，2年快速起量"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥49,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">20,714</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">17.39%</div><div class="metric-key">商机转化率</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 高转化机械商</div>
-          </div>
-
-          <!-- ⑰ 包装印刷·印刷服务 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(60,140,200,0.08);border-color:rgba(60,140,200,0.3);color:#1a5a8a;">包装印刷 · 印刷服务</div>
-              <div class="case-company">广州新彩印刷纸品有限公司</div>
-              <div class="case-highlight">"6年印刷老牌，商机转化率约20%，GMV¥18,546"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥35,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">18,546</div><div class="metric-key">近3月信保GMV</div></div>
-              <div class="metric-item"><div class="metric-val">6年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 6年稳健商家</div>
-          </div>
-
-          <!-- ⑱ 电气设备·工业控制 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(90,120,201,0.08);border-color:rgba(90,120,201,0.3);color:#3a5cb5;">电气设备 · 工业控制</div>
-              <div class="case-company">广州拓燊自动化科技有限公司</div>
-              <div class="case-highlight">"商机转化率高达41.10%，工控自动化先锋"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">41.10%</div><div class="metric-key">商机转化率</div></div>
-              <div class="metric-item"><div class="metric-val">¥35,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">4年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 超高转化率</div>
-          </div>
-
-          <!-- ⑲ 包装·塑料包装 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(100,160,80,0.08);border-color:rgba(100,160,80,0.3);color:#3a7a1a;">包装印刷 · 塑料包装</div>
-              <div class="case-company">广州韩雨资国际贸易有限公司</div>
-              <div class="case-highlight">"首年大额方案¥45,800 + P4P¥10,000，强势起步"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥45,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">¥10,000</div><div class="metric-key">P4P余额</div></div>
-              <div class="metric-item"><div class="metric-val">1年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 大投入新锐</div>
-          </div>
-
-          <!-- ⑳ 工业机械·橡塑 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(160,120,60,0.08);border-color:rgba(160,120,60,0.3);color:#7a5a1a;">工业机械 · 橡塑机械</div>
-              <div class="case-company">广州市三晖盈机械设备有限公司</div>
-              <div class="case-highlight">"8年橡塑机械专业供应商，商机转化率17.86%"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">¥35,800</div><div class="metric-key">年方案金额</div></div>
-              <div class="metric-item"><div class="metric-val">17.86%</div><div class="metric-key">商机转化率</div></div>
-              <div class="metric-item"><div class="metric-val">8年</div><div class="metric-key">会员年限</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 8年专业机械商</div>
-          </div>
-
-          <!-- ㉑ 五金·建材 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(80,80,80,0.07);border-color:rgba(80,80,80,0.2);color:#444;">五金建材 · 广州产业带</div>
-              <div class="case-company">广州·五金标杆商家</div>
-              <div class="case-highlight">"产品覆盖广，出口欧美市场，平台信保双认证"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">稳健</div><div class="metric-key">运营状态</div></div>
-              <div class="metric-item"><div class="metric-val">双认证</div><div class="metric-key">平台资质</div></div>
-              <div class="metric-item"><div class="metric-val">欧美</div><div class="metric-key">主攻市场</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 信保亮灯</div>
-          </div>
-
-          <!-- ㉒ 家居·家具 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(200,90,140,0.08);border-color:rgba(200,90,140,0.3);color:#aa3a6a;">家居家具 · 广州产业带</div>
-              <div class="case-company">广州·家居标杆商家</div>
-              <div class="case-highlight">"番禺家具工厂转型出海，P4P稳定投入，询盘持续增长"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">增长</div><div class="metric-key">询盘趋势</div></div>
-              <div class="metric-item"><div class="metric-val">稳定</div><div class="metric-key">P4P投入</div></div>
-              <div class="metric-item"><div class="metric-val">欧美</div><div class="metric-key">主攻市场</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 工贸一体</div>
-          </div>
-
-          <!-- ㉓ 鞋业 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(201,90,90,0.08);border-color:rgba(201,90,90,0.3);color:#b94a4a;">鞋业 · 劳保鞋</div>
-              <div class="case-company">广州·荔湾鞋业标杆商家</div>
-              <div class="case-highlight">"劳保鞋出口中东+非洲，信保亮灯，年方案稳定续签"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">中东</div><div class="metric-key">主攻市场</div></div>
-              <div class="metric-item"><div class="metric-val">亮灯</div><div class="metric-key">信保状态</div></div>
-              <div class="metric-item"><div class="metric-val">续签</div><div class="metric-key">合作阶段</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 信保亮灯</div>
-          </div>
-
-          <!-- ㉔ 箱包皮具 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(160,90,200,0.08);border-color:rgba(160,90,200,0.3);color:#7a3aaa;">箱包皮具 · 花都产业带</div>
-              <div class="case-company">广州·花都皮具标杆商家</div>
-              <div class="case-highlight">"花都皮具工厂，OEM+自有品牌双线出海，欧美订单稳定"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">双线</div><div class="metric-key">出海模式</div></div>
-              <div class="metric-item"><div class="metric-val">稳定</div><div class="metric-key">欧美订单</div></div>
-              <div class="metric-item"><div class="metric-val">认证</div><div class="metric-key">平台资质</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · OEM+品牌双线</div>
-          </div>
-
-          <!-- ㉕ 牛仔服装 -->
-          <div class="case-card">
-            <div class="case-left">
-              <div class="case-industry-tag" style="background:rgba(60,140,200,0.08);border-color:rgba(60,140,200,0.3);color:#1a5a8a;">服装 · 牛仔增城</div>
-              <div class="case-company">广州·增城牛仔标杆商家</div>
-              <div class="case-highlight">"增城新塘牛仔名厂，供应链完整，询盘来自30+国家"</div>
-            </div>
-            <div class="case-metrics">
-              <div class="metric-item"><div class="metric-val">30+</div><div class="metric-key">询盘来源国</div></div>
-              <div class="metric-item"><div class="metric-val">完整</div><div class="metric-key">供应链</div></div>
-              <div class="metric-item"><div class="metric-val">增长</div><div class="metric-key">GMV趋势</div></div>
-            </div>
-            <div class="case-badge">✦ 实地认证 · 30+国家询盘</div>
-          </div>
-
-        </div><!-- /scroll-track -->
-      </div><!-- /scroll-outer -->
-      <p class="scroll-pause-tip">↔ 自动滚动中 · 鼠标悬停暂停</p>
-    </section>
-
-    <!-- 联系方式 -->
-    <section class="section">
-      <div class="section-header">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <div class="section-title">联系我</div>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="contact-row">
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.57 21 3 13.43 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
-          </div>
+        <div class="contact-addr">
+          <div class="contact-addr-dot"></div>
           <div>
-            <div class="contact-label">手机 / 微信</div>
-            <div class="contact-value">19521089136</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </div>
-          <div>
-            <div class="contact-label">邮箱</div>
-            <div class="contact-value">wb-fl821156@alibaba-inc.com</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          </div>
-          <div>
-            <div class="contact-label">地址</div>
-            <div class="contact-value">广州市海珠区鼎新路88号 广州阿里中心</div>
+            <strong style="color:var(--navy);font-size:12px;display:block;margin-bottom:2px">办公地址</strong>
+            广州市海珠区鼎新路 88 号 · 广州阿里中心<br />
+            Alibaba Center, 88 Dingxin Road, Haizhu District, Guangzhou
           </div>
         </div>
       </div>
 
-      <!-- 微信二维码 -->
-      <div style="margin-top:16px; background:var(--white); border:1px solid var(--border); border-radius:10px; padding:20px 24px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-        <img src="https://sc02.alicdn.com/kf/H262720f1db554fd190325204a7b4fb00w.jpg"
-             alt="名片 / 微信二维码"
-             style="height:110px; width:auto; border-radius:8px; object-fit:contain; border:1px solid var(--border);" />
-        <div>
-          <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">扫码添加微信 · 随时沟通</div>
-          <div style="font-size:13px;font-weight:500;color:var(--navy);">范浪 David</div>
-          <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">阿里集团 · ICBU · 南粤大区广州中区<br/>资深客户经理 / Senior Account Manager</div>
+      <div class="contact-right">
+        <div class="contact-card">
+          <div class="contact-qr">
+            <img src="https://sc02.alicdn.com/kf/H262720f1db554fd190325204a7b4fb00w.jpg" alt="微信名片二维码" />
+          </div>
+          <div class="contact-scan-text">扫描二维码 · 添加微信名片</div>
+          <div class="contact-name-block">
+            <div class="contact-name-cn">范 浪</div>
+            <div class="contact-name-en">David Fan</div>
+            <div class="contact-dept">
+              阿里集团 · B类事业部 · ICBU<br />
+              南粤大区 · 广州中区 · 资深客户经理 / ISV
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-  </main>
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span>范浪 David</span> &nbsp;·&nbsp; 阿里巴巴国际站 · ICBU 南粤大区广州中区 · 资深客户经理
+    </div>
+    <div class="footer-copy">© 2026 · fanlang-alibaba.com · 专注广州产业带工厂出海</div>
+  </div>
+</footer>
 
-  <footer>
-    范浪 David &nbsp;·&nbsp; 阿里巴巴国际站 · ICBU 南粤大区广州中区 &nbsp;·&nbsp; 资深客户经理 &nbsp;·&nbsp; 专注工厂出海
-  </footer>
-</div><!-- /page-wrap -->
+<!-- ══ 微信悬浮按钮 ══ -->
+<div class="wechat-float">
+  <a href="tel:19521089136" class="wechat-btn" title="立即联系">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.57 21 3 13.43 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+  <span class="wechat-label">立即致电</span>
+</div>
 
-  <script>
-    // 无缝滚动：将卡片列表复制一份追加在末尾，实现真正无缝循环
-    (function() {
-      var track = document.getElementById('scrollTrack');
-      if (!track) return;
-      var clone = track.cloneNode(true);
-      clone.removeAttribute('id');
-      clone.setAttribute('aria-hidden', 'true');
-      // 将克隆内容的卡片追加到原 track 末尾
-      var cards = clone.querySelectorAll('.case-card');
-      cards.forEach(function(c) { track.appendChild(c); });
-    })();
-  </script>
+<script>
+  // 无缝滚动克隆
+  (function () {
+    var track = document.getElementById('scrollTrack');
+    if (!track) return;
+    var cards = Array.from(track.querySelectorAll('.case-card'));
+    cards.forEach(function (c) { track.appendChild(c.cloneNode(true)); });
+  })();
+</script>
+
 </body>
 </html>
